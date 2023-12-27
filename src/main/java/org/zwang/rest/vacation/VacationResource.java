@@ -1,6 +1,6 @@
 package org.zwang.rest.vacation;
 
-import org.zwang.application.service.VacationQueryService;
+import org.zwang.application.service.query.VacationQueryService;
 import org.zwang.rest.vacation.model.VacationResponse;
 
 import javax.inject.Inject;
