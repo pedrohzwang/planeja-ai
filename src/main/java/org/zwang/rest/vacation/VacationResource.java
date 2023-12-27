@@ -1,8 +1,22 @@
 package org.zwang.rest.vacation;
 
-import javax.ws.rs.Path;
+import org.zwang.application.service.VacationQueryService;
+import org.zwang.rest.vacation.model.VacationResponse;
 
-@Path("v1/ferias")
+import javax.inject.Inject;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import java.util.List;
+
+@Path("v1/vacations")
 public class VacationResource {
+
+    @Inject
+    private VacationQueryService vacationQueryService;
+
+    @GET
+    public List<VacationResponse> findAll() {
+        return vacationQueryService.findAll();
+    }
 
 }

@@ -212,6 +212,11 @@
               <version>${doma.version}</version>
             </path>
           </annotationProcessorPaths>
+          <compilerArgs>
+            <arg>-parameters</arg>
+            <arg>-Adoma.domain.converters=org.zwang.config.converter.DomainConvertersProvider
+            </arg>
+          </compilerArgs>
         </configuration>
       </plugin>
     </plugins>
