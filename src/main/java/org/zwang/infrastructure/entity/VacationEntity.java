@@ -6,6 +6,7 @@ import org.seasar.doma.Id;
 import org.seasar.doma.Metamodel;
 import org.seasar.doma.Table;
 import org.seasar.doma.jdbc.entity.NamingType;
+import org.zwang.domain.vacation.Vacation;
 
 import java.time.LocalDate;
 import java.util.UUID;
@@ -14,10 +15,21 @@ import java.util.UUID;
 @Table(name = "vacation")
 @Builder
 public record VacationEntity(
-        @Id UUID id,
+        @Id
+        UUID id,
         String description,
         LocalDate startDate,
         LocalDate endDate,
         String destiny
 ) {
+
+    public static VacationEntity of(Vacation vacation) {
+        return VacationEntity.builder()
+                .id(vacation.getId().identity())
+                .description(vacation.getDescription())
+                .startDate(vacation.getStartDate().getDate())
+                .endDate(vacation.getEndDate().getDate())
+                .destiny(vacation.getDestiny())
+                .build();
+    }
 }

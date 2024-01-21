@@ -2,7 +2,7 @@ package org.zwang.infrastructure.repository.query;
 
 import org.zwang.application.interfaces.query.VacationQueryRepository;
 import org.zwang.infrastructure.dao.VacationDAO;
-import org.zwang.rest.vacation.model.VacationResponse;
+import org.zwang.rest.vacation.model.vacation.VacationResponse;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;

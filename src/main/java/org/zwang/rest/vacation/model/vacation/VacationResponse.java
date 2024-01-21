@@ -1,4 +1,4 @@
-package org.zwang.rest.vacation.model;
+package org.zwang.rest.vacation.model.vacation;
 
 import lombok.Builder;
 

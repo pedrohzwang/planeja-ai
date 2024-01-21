@@ -2,7 +2,7 @@ package org.zwang.application.service.query;
 
 import lombok.extern.jbosslog.JBossLog;
 import org.zwang.application.interfaces.query.VacationQueryRepository;
-import org.zwang.rest.vacation.model.VacationResponse;
+import org.zwang.rest.vacation.model.vacation.VacationResponse;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;

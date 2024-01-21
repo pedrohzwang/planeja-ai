@@ -1,6 +1,6 @@
 package org.zwang.application.interfaces.query;
 
-import org.zwang.rest.vacation.model.VacationResponse;
+import org.zwang.rest.vacation.model.vacation.VacationResponse;
 
 import java.util.List;
 
