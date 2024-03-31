@@ -7,6 +7,7 @@ import org.zwang.infrastructure.entity.VacationEntity;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+import java.util.UUID;
 
 @ApplicationScoped
 public class VacationRepositoryImpl implements VacationRepository {
@@ -15,7 +16,12 @@ public class VacationRepositoryImpl implements VacationRepository {
     private VacationDAO vacationDAO;
 
     @Override
-    public void create(Vacation vacation) {
-        vacationDAO.create(VacationEntity.of(vacation));
+    public UUID create(Vacation vacation) {
+        return vacationDAO.create(VacationEntity.of(vacation));
+    }
+
+    @Override
+    public void update(Vacation vacation) {
+        vacationDAO.update(VacationEntity.of(vacation));
     }
 }

@@ -9,9 +9,12 @@ import org.zwang.rest.vacation.model.vacation.VacationResponse;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import java.util.Collections;
 import java.util.List;
+import java.util.UUID;
 
 @Path("api/v1/vacations")
 public class VacationResource {
@@ -29,8 +32,13 @@ public class VacationResource {
     }
 
     @POST
-    public void create(VacationRequest request) {
-        vacationService.create(Vacation.fromCreateRequest(request));
+    public UUID create(VacationRequest request) {
+        return vacationService.create(Vacation.fromCreateRequest(request));
     }
 
+    @PUT
+    @Path("/{uuid}")
+    public void update(@PathParam("uuid") UUID uuid, VacationRequest request) {
+        vacationService.update(Vacation.fromUpdateequest(uuid, request));
+    }
 }

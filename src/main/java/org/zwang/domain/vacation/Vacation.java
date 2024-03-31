@@ -34,4 +34,16 @@ public class Vacation {
                 .target(request.target())
                 .build();
     }
+
+    public static Vacation fromUpdateequest(UUID uuid, VacationRequest request) {
+        return Vacation.builder()
+                .id(new VacationId(uuid))
+                .description(request.description())
+                .destiny(request.destiny())
+                .startDate(new Date(request.startDate()))
+                .endDate(new Date(request.endDate()))
+                .type(request.type())
+                .target(request.target())
+                .build();
+    }
 }
