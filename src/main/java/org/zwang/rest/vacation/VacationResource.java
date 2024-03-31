@@ -10,9 +10,10 @@ import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import java.util.Collections;
 import java.util.List;
 
-@Path("v1/vacations")
+@Path("api/v1/vacations")
 public class VacationResource {
 
     @Inject
@@ -23,7 +24,8 @@ public class VacationResource {
 
     @GET
     public List<VacationResponse> findAll() {
-        return vacationQueryService.findAll();
+//        return vacationQueryService.findAll();
+        return Collections.emptyList();
     }
 
     @POST

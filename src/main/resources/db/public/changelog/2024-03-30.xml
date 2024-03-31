@@ -3,7 +3,13 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
     http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
-    <include file="public/changelog/inicial.xml" relativeToChangelogFile="true"/>
-    <include file="public/changelog/2024-03-10.xml" relativeToChangelogFile="true"/>
-    <include file="public/changelog/2024-03-30.xml" relativeToChangelogFile="true"/>
+
+    <changeSet id="202403302027" author="Pedro Zwang">
+        <addColumn tableName="vacation">
+            <column name="type" type="VARCHAR(255)" />
+        </addColumn>
+        <addColumn tableName="vacation">
+            <column name="target" type="VARCHAR(255)" />
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>

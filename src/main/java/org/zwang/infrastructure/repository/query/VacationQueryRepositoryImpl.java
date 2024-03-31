@@ -22,6 +22,8 @@ public class VacationQueryRepositoryImpl implements VacationQueryRepository {
                                 .id(dto.id())
                                 .description(dto.description())
                                 .destiny(dto.destiny())
+                                .type(dto.type())
+                                .target(dto.target())
                                 .build())
                 .toList();
     }
