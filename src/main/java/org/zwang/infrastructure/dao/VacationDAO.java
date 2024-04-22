@@ -22,7 +22,10 @@ public class VacationDAO {
 
     public List<VacationDTO> listVacations() {
         VacationEntity_ vacationEntity = new VacationEntity_();
-        var result = nativeSql.from(vacationEntity).select(vacationEntity).fetch();
+        var result = nativeSql.from(vacationEntity)
+                .orderBy(vac -> vac.asc(vacationEntity.description))
+                .select(vacationEntity)
+                .fetch();
         return result.stream().map(entity -> VacationDTO.fromEntity(entity)).toList();
     }
 

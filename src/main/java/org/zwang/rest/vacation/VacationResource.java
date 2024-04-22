@@ -12,7 +12,6 @@ import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
-import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
@@ -27,8 +26,8 @@ public class VacationResource {
 
     @GET
     public List<VacationResponse> findAll() {
-//        return vacationQueryService.findAll();
-        return Collections.emptyList();
+        return vacationQueryService.findAll();
+        //return Collections.emptyList();
     }
 
     @POST
